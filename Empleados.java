@@ -2,7 +2,7 @@ public class Empleados {
     private double salario;
     private int edad;
     private String nombre;
-    public Empleados(double salario, int edad, String nombre) {
+    public Empleados(int salario, int edad, String nombre) {
         this.salario = salario;
         this.edad = edad;
         this.nombre = nombre;
