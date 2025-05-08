@@ -1,33 +1,46 @@
 import java.util.Scanner;
+
+
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el numero de empleados");
+
+        System.out.println("Ingrese el número de empleados:");
         int num = sc.nextInt();
+        sc.nextLine(); // Consumir la nueva línea pendiente
+
         Empleados[] empleados = new Empleados[num];
+
         for (int i = 0; i < num; i++) {
-            System.out.println("Ingrese el nombre del empleado");
-            String nombre = sc.next();
-            System.out.println("Ingrese ls edad del empleado");
+            System.out.println("Ingrese el nombre del empleado:");
+            String nombre = sc.nextLine();
+
+            System.out.println("Ingrese la edad del empleado:");
             int edad = sc.nextInt();
-            System.out.println("Ingrese el edad del empleado");
+
+            System.out.println("Ingrese el salario del empleado:");
             int salario = sc.nextInt();
+            sc.nextLine();
 
-            empleados[i]= new Empleados(salario,edad,nombre);
-            empleados[i].getNombre();
-            empleados[i].getEdad();
-            empleados[i].getSalario();
-            System.out.println("nombre"+nombre);
-            System.out.println("edad"+edad);
-            System.out.println("salario"+salario);
-        }
-
+            if (salario >= 0) {
+                System.out.println("El salario es correcto, puede seguir registrando al empleado.");
+            } else {
+                System.out.println("El salario es incorrecto, ingrese un valor válido.");
+                continue; // Evita la creación del objeto con un salario inválido
             }
 
-
+            empleados[i] = new Empleados(salario, edad, nombre);
         }
 
+        // Mostrar información de los empleados
+        System.out.println("\nInformación de los empleados:");
+        for (Empleados empleado : empleados) {
+            if (empleado != null) {
+                empleado.mostrarInformacion();
+            }
+        }
 
-
+        sc.close();
     }
 }
