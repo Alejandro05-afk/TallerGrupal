@@ -1,5 +1,5 @@
 public class Empleados {
-    private int salario;
+    private double salario;
     private int edad;
     private String nombre;
     public Empleados(int salario, int edad, String nombre) {
