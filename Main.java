@@ -19,6 +19,14 @@ public class Main {
             System.out.println("Ingrese la edad del empleado:");
             int edad = sc.nextInt();
 
+
+            if (edad >= 18) {
+                System.out.println("El usuario es mayor de edad, puede acceder al sistema.");
+            } else {
+                System.out.println("El usuario debe ser mayor de edad.");
+                continue; // Evita la creación del objeto con un salario inválido
+            }
+
             System.out.println("Ingrese el salario del empleado:");
             int salario = sc.nextInt();
             sc.nextLine();
