@@ -13,7 +13,13 @@ public class Main {
             System.out.println("Ingrese el edad del empleado");
             double salario = sc.nextDouble();
 
-            empleados[i]= new Empleados(nombre,edad,salario);
+            empleados[i]= new Empleados(salario,edad,nombre);
+            empleados[i].getNombre();
+            empleados[i].getEdad();
+            empleados[i].getSalario();
+            System.out.println("nombre"+nombre);
+            System.out.println("edad"+edad);
+            System.out.println("salario"+salario);
         }
 
             }
