@@ -11,7 +11,7 @@ public class Main {
             System.out.println("Ingrese ls edad del empleado");
             int edad = sc.nextInt();
             System.out.println("Ingrese el edad del empleado");
-            double salario = sc.nextDouble();
+            int salario = sc.nextInt();
 
             empleados[i]= new Empleados(salario,edad,nombre);
             empleados[i].getNombre();
